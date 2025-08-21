@@ -2,11 +2,15 @@
 "use strict";
 
 import express, { Express } from "express";
-import http from "http";
+// import http from "http";
+// import * as express from "express";   // ✅ express ke liye
+import * as http from "http";     
 import { Server, Socket } from "socket.io";
 
 const port =  process.env.PORT || 8001;
-const app: Express = express();
+// const app = express();
+// const app: Express = express();
+const app: express.Express = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
